@@ -1,0 +1,32 @@
+{
+  "name": "kniot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest",
+    "export": "next export",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.11.10",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "eslint": "8.29.0",
+    "eslint-config-next": "13.0.6",
+    "next": "13.0.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@vitejs/plugin-react": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "jsdom": "^20.0.3",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4",
+    "vitest": "^0.26.0"
+  }
+}
