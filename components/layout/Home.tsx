@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import paritData from '../../models/paritData';
 import ParitClass from '../../models/paritClass';
+import { indieFlower } from '../../pages/_app';
 
 import styles from './Home.module.css';
 import Hosafa from '../hosafa/Hosafa';
@@ -76,7 +77,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Hosafa show={[show, setShow]} onAddItem={onAddItem} />
-      <h1 className={styles.title}>Kniot</h1>
+      <h1 className={`${styles.title} ${indieFlower.className}`}>Kniot</h1>
 
       <main className={styles.container}>
         <Header
