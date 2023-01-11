@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { participant } from '../../models/paritData';
 
-import styles from './Participant.module.css';
 import Image from 'next/image';
 import hod from '../../public/images/הוד.png';
 import daniel from '../../public/images/דניאל.png';
@@ -50,18 +49,26 @@ const Participant: React.FC<{
   };
 
   return (
-    <div className={styles.container}>
+    <div className='flex justify-center col-span-1'>
       <input
         type='checkbox'
         id={props.id}
+        className='hidden'
         onChange={() => {
           setChecked((prevChecked) => !prevChecked);
         }}
       />
-      <label onClick={selectHandler} htmlFor={props.id}>
+      <label
+        onClick={selectHandler}
+        htmlFor={props.id}
+        className='h-full w-full'
+      >
         <Image
-          className={`${styles.person} ${props.id} ${
-            checked ? styles.checked : null
+          className={`cursor-pointer 
+            !text-${
+              props.id
+            } hover:animate-wiggle hover:drop-shadow-participant ${
+            checked ? 'drop-shadow-participant hover:animate-none' : ''
           }`}
           width={128}
           height={128}

@@ -1,7 +1,5 @@
 import ParitClass from '../../models/paritClass';
 
-import styles from './Footer.module.css';
-
 const Footer: React.FC<{ pritim: ParitClass[] }> = (props) => {
   const participantCounter = (participantId: string) => {
     const filteredPritim = props.pritim.filter((parit) =>
@@ -17,31 +15,31 @@ const Footer: React.FC<{ pritim: ParitClass[] }> = (props) => {
   };
 
   return (
-    <footer className={styles.container}>
-      <div className={`${styles.person} ${styles.hod}`}>
-        <span className={styles.pre}>הוד</span>
-        <span className={styles.sum}>{`${participantCounter('hod').toFixed(
+    <footer className='grid grid-cols-2 w-full fixed my-0 mx-auto bottom-0 left-0 z-0 sm:grid-cols-4'>
+      <div className='person bg-hod'>
+        <span>הוד</span>
+        <span className='font-bold'>{`${participantCounter('hod').toFixed(
           2
         )}₪`}</span>
       </div>
 
-      <div className={`${styles.person} ${styles.daniel}`}>
-        <span className={styles.pre}>דניאל</span>
-        <span className={styles.sum}>{`${participantCounter('daniel').toFixed(
+      <div className='person bg-daniel'>
+        <span>דניאל</span>
+        <span className='font-bold'>{`${participantCounter('daniel').toFixed(
           2
         )}₪`}</span>
       </div>
 
-      <div className={`${styles.person} ${styles.maayan}`}>
-        <span className={styles.pre}>מעיין</span>
-        <span className={styles.sum}>{`${participantCounter('maayan').toFixed(
+      <div className='person bg-maayan'>
+        <span>מעיין</span>
+        <span className='font-bold'>{`${participantCounter('maayan').toFixed(
           2
         )}₪`}</span>
       </div>
 
-      <div className={`${styles.person} ${styles.omri}`}>
-        <span className={styles.pre}>עומרי</span>
-        <span className={styles.sum}>{`${participantCounter('omri').toFixed(
+      <div className='person bg-omri'>
+        <span>עומרי</span>
+        <span className='font-bold'>{`${participantCounter('omri').toFixed(
           2
         )}₪`}</span>
       </div>

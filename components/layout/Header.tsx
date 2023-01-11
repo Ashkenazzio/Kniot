@@ -1,27 +1,19 @@
 import Dispatcher from '../../models/dispatcher';
 
-import styles from './Header.module.css';
-
 const Header: React.FC<{
   setShow: Dispatcher<boolean>;
   onAddDelivery: () => void;
   onClearAll: () => void;
 }> = (props) => {
   return (
-    <div className={styles.container}>
-      <div onClick={() => props.setShow(true)} className={styles.btn}>
+    <div className='flex gap-4 items-end mb-8'>
+      <div onClick={() => props.setShow(true)} className='btn-primary'>
         הוסף פריט +
       </div>
-      <div
-        onClick={props.onAddDelivery}
-        className={`${styles.btn} ${styles['btn-alt']}`}
-      >
+      <div onClick={props.onAddDelivery} className='btn-alt'>
         הוסף משלוח
       </div>
-      <div
-        onClick={props.onClearAll}
-        className={`${styles.btn}  ${styles.clear}`}
-      >
+      <div onClick={props.onClearAll} className='btn-primary mr-auto'>
         נקה
       </div>
     </div>

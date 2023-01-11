@@ -3,7 +3,6 @@ import paritData from '../../models/paritData';
 import ParitClass from '../../models/paritClass';
 import { indieFlower } from '../../pages/_app';
 
-import styles from './Home.module.css';
 import Hosafa from '../hosafa/Hosafa';
 import Header from './Header';
 import Sikum from '../Sikum';
@@ -75,11 +74,15 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.home}>
+    <div className='grid grid-rows-[auto_1fr_auto] min-h-full overflow-auto'>
       <Hosafa show={[show, setShow]} onAddItem={onAddItem} />
-      <h1 className={`${styles.title} ${indieFlower.className}`}>Kniot</h1>
+      <h1
+        className={`${indieFlower.variable} font-display text-center text-8xl p-8`}
+      >
+        Kniot
+      </h1>
 
-      <main className={styles.container}>
+      <main className='px-4 h-full my-0 mx-auto mb-12  sm:w-4/5 sm:max-w-screen-2xl sm:mb-8 sm:px-0'>
         <Header
           setShow={setShow}
           onAddDelivery={onAddDelivery}

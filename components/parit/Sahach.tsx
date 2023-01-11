@@ -1,5 +1,4 @@
 import ParitClass from '../../models/paritClass';
-import styles from './Parit.module.css';
 
 const Sahach: React.FC<{ pritim: ParitClass[] }> = (props) => {
   const sahach = () => {
@@ -11,10 +10,9 @@ const Sahach: React.FC<{ pritim: ParitClass[] }> = (props) => {
   };
 
   return (
-    <div className={`${styles.container} ${styles.sahach}`}>
-      <div className={styles.cell}>סך הכל</div>
-
-      <div className={styles.cell}>{sahach().toFixed(2)}</div>
+    <div className='grid grid-cols-4 lg:grid-cols-table relative bg-slate-50 hover:bg-slate-100 border-solid border-accent text-2xl font-bold text-accent'>
+      <div className='p-4 border-l border-solid border-l-accent'>סך הכל</div>
+      <div className='p-4'>{sahach().toFixed(2)}</div>
     </div>
   );
 };

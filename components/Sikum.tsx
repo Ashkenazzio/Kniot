@@ -1,6 +1,5 @@
 import ParitClass from '../models/paritClass';
 
-import styles from './Sikum.module.css';
 import Parit from './parit/Parit';
 import Placeholder from './parit/Placeholder';
 import Sahach from './parit/Sahach';
@@ -11,15 +10,14 @@ const Sikum: React.FC<{
   onDeleteItem: (paritId: number) => void;
 }> = (props) => {
   return (
-    <div className={styles.container}>
-      <h2>רשימה:</h2>
+    <>
       {/* <Spinner /> */}
-      <div className={styles.table}>
-        <div className={styles.first}>
-          <span className={styles.cell}>תיאור</span>
-          <span className={styles.cell}>משתתפים</span>
-          <span className={styles.cell}>סכום</span>
-          <span className={styles.cell}>כל אחד</span>
+      <div className='grid my-0 mx-auto shadow-md rounded-lg mb-8'>
+        <div className='grid grid-cols-4 lg:grid-cols-table rounded-t-lg bg-accent font-bold text-white text-2xl'>
+          <span className='p-4 text-center'>תיאור</span>
+          <span className='p-4 text-center'>משתתפים</span>
+          <span className='p-4 text-center'>סכום</span>
+          <span className='p-4 text-center'>כל אחד</span>
         </div>
         {props.pritim.length != 0 &&
           props.pritim.map((parit) => {
@@ -31,11 +29,10 @@ const Sikum: React.FC<{
               />
             );
           })}
-        {props.pritim.length != 0 && <Sahach pritim={props.pritim} />}
-
         {props.pritim.length === 0 && <Placeholder />}
+        <Sahach pritim={props.pritim} />
       </div>
-    </div>
+    </>
   );
 };
 
