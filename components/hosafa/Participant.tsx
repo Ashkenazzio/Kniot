@@ -23,10 +23,10 @@ const Participant: React.FC<{
   }, [participants]);
 
   const pickPic = {
-    הוד: hod,
-    דניאל: daniel,
-    מעיין: maayan,
-    עומרי: omri,
+    hod: hod,
+    daniel: daniel,
+    maayan: maayan,
+    omri: omri,
   };
 
   const selectHandler = () => {
@@ -48,6 +48,13 @@ const Participant: React.FC<{
     }
   };
 
+  const colorByName = {
+    hod: '!text-hod',
+    daniel: '!text-daniel',
+    maayan: '!text-maayan',
+    omri: '!text-omri',
+  };
+
   return (
     <div className='flex justify-center col-span-1'>
       <input
@@ -64,17 +71,16 @@ const Participant: React.FC<{
         className='h-full w-full'
       >
         <Image
-          className={`cursor-pointer 
-            !text-${
-              props.id
-            } hover:animate-wiggle hover:drop-shadow-participant ${
-            checked ? 'drop-shadow-participant hover:animate-none' : ''
+          className={`${
+            colorByName[props.id as keyof typeof colorByName]
+          } cursor-pointer hover:animate-wiggle hover:drop-shadow-participant ${
+            checked ? `drop-shadow-participant hover:animate-none` : ''
           }`}
           width={128}
           height={128}
           // fill
-          src={pickPic[props.person as keyof typeof pickPic]}
-          alt={props.person}
+          src={pickPic[props.id as keyof typeof pickPic]}
+          alt={props.id}
         ></Image>
       </label>
     </div>

@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import localFont from '@next/font/local';
 import { Indie_Flower } from '@next/font/google';
 import { Open_Sans } from '@next/font/google';
+import Head from 'next/head';
 
 export const indieFlower = Indie_Flower({
   weight: '400',
@@ -23,8 +24,15 @@ const gveretLevin = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${gveretLevin.variable} font-cursive bg-bg text-body`}>
-      <Component {...pageProps} />;
-    </div>
+    <>
+      <Head>
+        <title>Kniot</title>
+      </Head>
+      <div
+        className={`${gveretLevin.variable} font-cursive bg-bg text-body min-h-full`}
+      >
+        <Component {...pageProps} />;
+      </div>
+    </>
   );
 }
